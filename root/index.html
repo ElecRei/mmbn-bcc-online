@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Index</title>
+        <meta name="description" content="__">
+        
+        <!-- CSS -->
+        
+            <style>
+                
+                table {
+                    border: 1px solid black;
+                    border-spacing: 0;
+                    border-collapse: collapse;
+                }
+                
+                td { border: 1px solid black;
+                     padding: 8px 6px; margin: 0; }
+                
+                tr.navi:hover td {
+                    background: orange;
+                }
+                
+                td.naviImg {
+                    padding: 0px;
+                }
+                
+                    td.naviImg img {
+                        display: block;
+                        padding: 0px;
+                    }
+                
+            </style>
+        
+        <!-- JS + jQuery -->
+        
+            <!-- jQuery 3.3.1 Min CDN -->
+        
+                <script
+                    src="http://code.jquery.com/jquery-3.3.1.min.js"
+                    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+                    crossorigin="anonymous">
+                </script>
+            
+    </head>
+    
+    
+    <body>
+        
+        <table id="outputTable">
+        
+        
+        </table>
+        
+        <table>
+            <tr>
+                <td>
+                    NaviName
+                </td>
+                <td>
+                    NaviElem
+                </td>
+                <td>
+                    naviHP
+                </td>
+                <td>
+                    NaviMB
+                </td>
+                <td>
+                    <td>A</td>
+                    <td>B</td>
+                    <td>C</td>
+                </td>
+            </tr>
+        </table>
+        
+        <script type="text/javascript" src="js/naviList.js"></script>
+        
+        <script type="text/javascript">
+            
+            /*
+            $('body').append(
+                '<ul>' +
+                '<li>Name: ' + naviMega.naviName + '</li>' +
+                '<li>Element: ' + naviMega.naviElem + '</li>' +
+                '<li>HP: ' + naviMega.naviHP + '</li>' +
+                '<li>MB: ' + naviMega.naviMB + '</li>' +
+                '</ul>'
+            );
+            */
+            
+            function genNaviList() {
+                
+                var numOfNavis = naviList.length;
+                
+                for(var i = 0; i < numOfNavis; i++) {
+                    
+                    $("#outputTable").append(
+                        "<tr class='navi " + i + "'>" +
+                            "<td class='naviImg'>" +
+                            "<img src='" +
+                            naviList[i].naviImg +
+                            "'/>" +
+                            "</td>" +
+                            "<td>" +
+                            naviList[i].naviName +
+                            "</td>" +
+                            "<td>" +
+                            naviList[i].naviElem +
+                            "</td>" +
+                            "<td>" +
+                            naviList[i].naviHP +
+                            "</td>" +
+                            "<td>" +
+                            naviList[i].naviMB +
+                            "</td>" +
+                                "<td>" +
+                                naviList[i].naviStats.Accuracy +
+                                "</td>" +
+                                "<td>" +
+                                naviList[i].naviStats.Dodge +
+                                "</td>" +
+                                "<td>" +
+                                naviList[i].naviStats.Priority +
+                                "</td>" +
+                                "<td>" +
+                                naviList[i].naviAtk.Name +
+                                "</td>" +
+                                "<td>" +
+                                naviList[i].naviAtk.Damage +
+                                "</td>" +
+                                "<td>" +
+                                naviList[i].naviAtk.Effect +
+                                "</td>" +
+                        "</tr>"
+                    );
+                    
+                }
+                
+                
+                console.log(naviList);
+                
+                console.log(naviList[0].naviName);
+                
+                console.log(naviList[0].naviStats.Accuracy);
+                
+            }
+            
+            genNaviList();
+        
+        </script>
+        
+    </body>
+    
+</html>
